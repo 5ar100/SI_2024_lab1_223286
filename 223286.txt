@@ -1,0 +1,296 @@
+1. Веќе имам креирано GitHub account.
+
+2. Го променив од main во master.
+
+3. Креирав репозиториум на GitHub кој потоа го именував според барањето:
+SI_2024_lab1_223286. Потоа го избрав радио копчето за поставување репото да биде приватно.
+
+4. Со наведените команди најпрво го креирав фолдерот, потоа влегов во него и го иницијализирав со $git init:
+
+user@PetarStojanovski MINGW64 ~/Desktop
+$ mkdir SI_2024_lab1_223286
+
+user@PetarStojanovski MINGW64 ~/Desktop
+$ cd SI_2024_lab1_223286/
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286
+$ git init
+Initialized empty Git repository in C:/Users/user/Desktop/SI_2024_lab1_223286/.git/
+
+5. Креирам remote за да ги поврзам моето локално репо со тоа што е на GitHub. Го направив тоа со помош на командата:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote add origin https://github.com/5ar100/SI_2024_lab1_223286.git
+
+и потоа проверив дали е успешно креиран remote со командата:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote -v
+origin  https://github.com/5ar100/SI_2024_lab1_223286.git (fetch)
+origin  https://github.com/5ar100/SI_2024_lab1_223286.git (push)
+
+6. Најпрво го креирам фајлот со nano, која што команда ни овозможува да го креираме фајлот и потоа истовремено да ја обработиме неговата содржина. Кога се креира фајлот тој се наоѓа во untracked фаза, кога ќе го аднеме истиот преминува во staged. Откако се наоѓа фајлот во staged дури тогаш може истиот да го commit-неме. Следуваат користените команди:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ nano README.md
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git commit -m "Initial commit"
+[master (root-commit) 10464a0] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+7. Откако ги симнав бараните јава фајлови од линковите, истите ги преместив во мојот локален репозиториум. Тие во почетокот се untracked, со git add тие преминуваат во staged. Користени команди:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git add --all
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git commit -m "Add starter code"
+[master 9771149] Add starter code
+ 3 files changed, 47 insertions(+)
+ create mode 100644 SILab1Main.java
+ create mode 100644 SILab1_1.java
+ create mode 100644 SILab1_2.java
+
+8. За синхронизација ги push-нуваме сите фајлови кои што се наоѓаат на мастер гранката. Користена е следната команда:
+
+$ git push -u origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 1.11 KiB | 1.11 MiB/s, done.
+Total 8 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+9. Креираме 2 помошни гранки bug1 и bug2. За таа цел е користена командата checkout која истовремено ја креира гранката и преминува на новокреираната. Користени команди:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout -b bug1
+Switched to a new branch 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout -b bug2
+Switched to a new branch 'bug2'
+
+10. За префрлање од една на друга гранка се користи повторно checkout, но без други аргументи (како што беше -b за креирање на гранката). Командата гласи: 
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+11. Со помош на nano ја едитирав грешката која се наоѓаше во условот, сега фајлот беше модофициран и со add премина во staged, па потоа можеше да се направи commit со бараната порака. Командите искористени:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ nano SILab1_1.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git add SILab1_1.java
+warning: in the working copy of 'SILab1_1.java', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git commit -m "Fix wrong condition in filterOddLengthStrings"
+[bug1 95ade47] Fix wrong condition in filterOddLengthStrings
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+12. За префрлање од една на друга гранка се користи повторно checkout, но без други аргументи (како што беше -b за креирање на гранката). Командата гласи: 
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+
+13. Повторно истиот процес како и во 11-тото барање. Искористен е следниот код:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ nano SILab1_2.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git add SILab1_2.java
+warning: in the working copy of 'SILab1_2.java', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git commit -m "Fix wrong condition in makeBigStringFrom"
+[bug2 6a0b434] Fix wrong condition in makeBigStringFrom
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+14. Истиот процес за промена на гранка како и во претходните барање, се користи checkout командата:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+15. Ја правам измената во 16тиот ред во бараниот фајл и потоа го правам add па commit со бараната порака:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git add SILab1Main.java
+warning: in the working copy of 'SILab1Main.java', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git commit -m "Call method filterOddLengthStrings in main class"
+[bug1 7d56792] Call method filterOddLengthStrings in main class
+ 1 file changed, 1 insertion(+)
+
+16. Повторно се преместуваме на друга гранка:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+
+
+17. Повторно истата постапка како и во 15тото барање:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git add SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git commit -m " Call method makeBigStringFrom in main class"
+[bug2 22a541b]  Call method makeBigStringFrom in main class
+ 1 file changed, 1 insertion(+)
+
+18. Ги push-нуваме двете гранки посебно:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push origin bug2
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 711 bytes | 711.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'bug2' on GitHub by visiting:
+remote:      https://github.com/5ar100/SI_2024_lab1_223286/pull/new/bug2
+remote:
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ * [new branch]      bug2 -> bug2
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git push origin bug1
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 760 bytes | 760.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'bug1' on GitHub by visiting:
+remote:      https://github.com/5ar100/SI_2024_lab1_223286/pull/new/bug1
+remote:
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ * [new branch]      bug1 -> bug1
+
+19. Како и досега преминувањето од една во друга гранка го правиме со checkout
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+20. Ја спојуваме гранката bug1 со мастер гранката со користење на merge командата, која ни овозможува спојување на гранки, стратегијата која што е искористена е Fast-forward:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git merge bug1
+Updating 9771149..7d56792
+Fast-forward
+ SILab1Main.java | 1 +
+ SILab1_1.java   | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+21. За синхронизација користиме git push и на тој начин ни upload-аат промените онлине на GitHub. Користев: 
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+   9771149..7d56792  master -> master
+
+22. Повторно се префрламе исто како до сега на гранката bug2 со користење checkout:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+Your branch is up to date with 'origin/bug2'.
+
+23. При rebase од bug2 ни доаѓа до појава на конфликт, во дадениот фајл во којшто се појавил конфликтот се наоѓаат и двете верзии од двата branch-а и ние може да го едитираме со цел да се прикажат правилно и двете фунции кои што ги изменивме и потоа додадовме со фајлот преку двете гранки посебно. Користени команди:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git rebase master
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply 22a541b...  Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 22a541b... Call method makeBigStringFrom in main class
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|REBASE 2/2)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|REBASE 2/2)
+$ git add SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|REBASE 2/2)
+$ git rebase --continue
+[detached HEAD 1604cf7]  Call method makeBigStringFrom in main class
+ 1 file changed, 1 insertion(+)
+Successfully rebased and updated refs/heads/bug2.
+
+24. Како и претходно истиот процес е за преминување од една во друга гранка:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+25. Повторно како и за првата гранка правиме merge и повторно е користена Fast-Forward стратегијата:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git merge bug2
+Updating 7d56792..1604cf7
+Fast-forward
+ SILab1Main.java | 1 +
+ SILab1_2.java   | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+26. git push користиме и за мастер и за bug1.
+
+27. За bug2 потребно беше со --force да направиме push, во спротивно дава error, бидејќи не работи Fast-Forward стратегијата. Кодот искористен е:
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ ! [rejected]        bug2 -> bug2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/5ar100/SI_2024_lab1_223286.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push --force
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ + 22a541b...1604cf7 bug2 -> bug2 (forced update)
+
+

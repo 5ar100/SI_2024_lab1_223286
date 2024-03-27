@@ -1,0 +1,725 @@
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ cd ..
+
+user@PetarStojanovski MINGW64 ~/Desktop
+$ mkdir SI_2024_lab1_223286
+
+user@PetarStojanovski MINGW64 ~/Desktop
+$ cd SI_2024_lab1_223286/
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286
+$ git init
+Initialized empty Git repository in C:/Users/user/Desktop/SI_2024_lab1_223286/.git/
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote add origin master
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote add origin master https://github.com/5ar100/SI_2024_lab1_223286.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --[no-]fetch      fetch the remote branches
+    --[no-]tags           import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --[no-]track <branch>
+                          branch(es) to track
+    -m, --[no-]master <branch>
+                          master branch
+    --[no-]mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote add origin https://github.com/5ar100/SI_2024_lab1_223286.git    error: remote origin already exists.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote
+origin
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote -v
+origin  master (fetch)
+origin  master (push)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote rm origin
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote -v
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote add origin https://github.com/5ar100/SI_2024_lab1_223286.git
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git remote -v
+origin  https://github.com/5ar100/SI_2024_lab1_223286.git (fetch)
+origin  https://github.com/5ar100/SI_2024_lab1_223286.git (push)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ nano README.md
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git commit -m "Initial commit"
+[master (root-commit) 10464a0] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        SILab1Main.java
+        SILab1_1.java
+        SILab1_2.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git add --all
+warning: in the working copy of 'SILab1Main.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'SILab1_1.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'SILab1_2.java', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git commit -m "Add starter code"
+[master 9771149] Add starter code
+ 3 files changed, 47 insertions(+)
+ create mode 100644 SILab1Main.java
+ create mode 100644 SILab1_1.java
+ create mode 100644 SILab1_2.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git push -u origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 1.11 KiB | 1.11 MiB/s, done.
+Total 8 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout bug1
+error: pathspec 'bug1' did not match any file(s) known to git
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout -b bug1
+Switched to a new branch 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout -b bug2
+Switched to a new branch 'bug2'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ nano SILab1_1.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git add SILab1_1.java
+warning: in the working copy of 'SILab1_1.java', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git commit -m "Fix wrong condition in filterOddLengthStrings"
+[bug1 95ade47] Fix wrong condition in filterOddLengthStrings
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git log
+commit 95ade47d14ad89be2755ce43dba8d7daebedaa56 (HEAD -> bug1)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:38:56 2024 +0100
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 9771149005d974fad373f81478d0709c41ca71ed (origin/master, master, bug2)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:30:39 2024 +0100
+
+    Add starter code
+
+commit 10464a061b8a7cdd8a0853bb789b58a16a95cb53
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:26:33 2024 +0100
+
+    Initial commit
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug1
+Already on 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ nano SILab1_2.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git add SILab1_2.java
+warning: in the working copy of 'SILab1_2.java', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git commit -m "Fix wrong condition in makeBigStringFrom"
+[bug2 6a0b434] Fix wrong condition in makeBigStringFrom
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git status
+On branch bug2
+nothing to commit, working tree clean
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git log
+commit 6a0b434977c402e121e4d4000b6c883e99845159 (HEAD -> bug2)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:42:54 2024 +0100
+
+    Fix wrong condition in makeBigStringFrom
+
+commit 9771149005d974fad373f81478d0709c41ca71ed (origin/master, master)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:30:39 2024 +0100
+
+    Add starter code
+
+commit 10464a061b8a7cdd8a0853bb789b58a16a95cb53
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:26:33 2024 +0100
+
+    Initial commit
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git add SILab1Main.java
+warning: in the working copy of 'SILab1Main.java', LF will be replaced by CRLF the next time Git touches it
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git commit -m "Call method filterOddLengthStrings in main class"
+[bug1 7d56792] Call method filterOddLengthStrings in main class
+ 1 file changed, 1 insertion(+)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git log
+commit 7d567927ce8a060b1471f8e86b6b8cfee843c763 (HEAD -> bug1)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:46:40 2024 +0100
+
+    Call method filterOddLengthStrings in main class
+
+commit 95ade47d14ad89be2755ce43dba8d7daebedaa56
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:38:56 2024 +0100
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 9771149005d974fad373f81478d0709c41ca71ed (origin/master, master)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:30:39 2024 +0100
+
+    Add starter code
+
+commit 10464a061b8a7cdd8a0853bb789b58a16a95cb53
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:26:33 2024 +0100
+
+    Initial commit
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git add SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git commit -m " Call method makeBigStringFrom in main class"
+[bug2 22a541b]  Call method makeBigStringFrom in main class
+ 1 file changed, 1 insertion(+)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push
+fatal: The current branch bug2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin bug2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push origin bug2
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 711 bytes | 711.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'bug2' on GitHub by visiting:
+remote:      https://github.com/5ar100/SI_2024_lab1_223286/pull/new/bug2
+remote:
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ * [new branch]      bug2 -> bug2
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git push origin bug1
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 760 bytes | 760.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'bug1' on GitHub by visiting:
+remote:      https://github.com/5ar100/SI_2024_lab1_223286/pull/new/bug1
+remote:
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ * [new branch]      bug1 -> bug1
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git merge bug1
+Updating 9771149..7d56792
+Fast-forward
+ SILab1Main.java | 1 +
+ SILab1_1.java   | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+   9771149..7d56792  master -> master
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout
+Your branch is up to date with 'origin/master'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git push
+fatal: The current branch bug1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin bug1
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git push -u origin master
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push
+fatal: The current branch bug2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin bug2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push -u origin bug2
+Everything up-to-date
+branch 'bug2' set up to track 'origin/bug2'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git push -u origin bug1
+Everything up-to-date
+branch 'bug1' set up to track 'origin/bug1'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug1^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+Your branch is up to date with 'origin/bug2'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git rebase master
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply 22a541b...  Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 22a541b... Call method makeBigStringFrom in main class
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|REBASE 2/2)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|REBASE 2/2)
+$ git add SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|REBASE 2/2)
+$ git rebase --continue
+[detached HEAD 1604cf7]  Call method makeBigStringFrom in main class
+ 1 file changed, 1 insertion(+)
+Successfully rebased and updated refs/heads/bug2.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git log
+commit 1604cf7489015451caaceb3e7279c9700f402482 (HEAD -> bug2)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:52:27 2024 +0100
+
+     Call method makeBigStringFrom in main class
+
+commit 6b8bca72312f66209b4679c0a8bd0bb2cd823386
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:42:54 2024 +0100
+
+    Fix wrong condition in makeBigStringFrom
+
+commit 7d567927ce8a060b1471f8e86b6b8cfee843c763 (origin/master, origin/bug1, master, bug1)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:46:40 2024 +0100
+
+    Call method filterOddLengthStrings in main class
+
+commit 95ade47d14ad89be2755ce43dba8d7daebedaa56
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:38:56 2024 +0100
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 9771149005d974fad373f81478d0709c41ca71ed
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:30:39 2024 +0100
+
+    Add starter code
+
+commit 10464a061b8a7cdd8a0853bb789b58a16a95cb53
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:26:33 2024 +0100
+
+    Initial commit
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git log
+commit 7d567927ce8a060b1471f8e86b6b8cfee843c763 (HEAD -> master, origin/master, origin/bug1, bug1)
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:46:40 2024 +0100
+
+    Call method filterOddLengthStrings in main class
+
+commit 95ade47d14ad89be2755ce43dba8d7daebedaa56
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:38:56 2024 +0100
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 9771149005d974fad373f81478d0709c41ca71ed
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:30:39 2024 +0100
+
+    Add starter code
+
+commit 10464a061b8a7cdd8a0853bb789b58a16a95cb53
+Author: Petar Stojanovski <petar.stojanovski.3@students.finki.ukim.mk>
+Date:   Wed Mar 27 21:26:33 2024 +0100
+
+    Initial commit
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git merge bug2
+Updating 7d56792..1604cf7
+Fast-forward
+ SILab1Main.java | 1 +
+ SILab1_2.java   | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout bug1
+Switched to branch 'bug1'
+Your branch is up to date with 'origin/bug1'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git push
+Everything up-to-date
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+Your branch and 'origin/bug2' have diverged,
+and have 4 and 2 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git pull
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+Automatic merge failed; fix conflicts and then commit the result.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git checkout bug1
+error: you need to resolve your current index first
+SILab1Main.java: needs merge
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git push
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ ! [rejected]        bug2 -> bug2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/5ar100/SI_2024_lab1_223286.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git pull --force
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git pull
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git add SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git pull
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git push
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ ! [rejected]        bug2 -> bug2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/5ar100/SI_2024_lab1_223286.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2|MERGING)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 717 bytes | 717.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+   7d56792..1604cf7  master -> master
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout bug2
+Switched to branch 'bug2'
+Your branch and 'origin/bug2' have diverged,
+and have 4 and 2 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout bug1
+Switched to branch 'bug1'
+Your branch is up to date with 'origin/bug1'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (master)
+$ git checkout bug2
+Switched to branch 'bug2'
+Your branch and 'origin/bug2' have diverged,
+and have 4 and 2 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ nano SILab1Main.java
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ ! [rejected]        bug2 -> bug2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/5ar100/SI_2024_lab1_223286.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git push --force
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/5ar100/SI_2024_lab1_223286.git
+ + 22a541b...1604cf7 bug2 -> bug2 (forced update)
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ ^C
+
+user@PetarStojanovski MINGW64 ~/Desktop/SI_2024_lab1_223286 (bug2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
